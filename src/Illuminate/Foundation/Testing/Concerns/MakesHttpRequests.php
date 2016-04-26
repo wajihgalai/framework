@@ -348,7 +348,7 @@ trait MakesHttpRequests
      */
     protected function decodeResponseJson()
     {
-        $decodedResponse = json_decode($this->response->getContent(), true);
+        $decodedResponse = json_decode($this->response->getContent());
 
         if (is_null($decodedResponse) || $decodedResponse === false) {
             $this->fail('Invalid JSON was returned from the route. Perhaps an exception was thrown?');
